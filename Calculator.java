@@ -1,18 +1,17 @@
 import java.util.Scanner;
 
-public class Calculator {
+public class GeneralCalculator {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         double number1, number2, result = 0;
         char operator;
 
-        System.out.print("Enter Number: ");
+        System.out.print("Enter first number: ");
         number1 = scanner.nextDouble();
-        System.out.print("Enter Operator (+, -, *, /): ");
+        System.out.print("Enter operator (+, -, *, /): ");
         operator = scanner.next().charAt(0);
-        System.out.print("Enter Number: ");
+        System.out.print("Enter second number: ");
         number2 = scanner.nextDouble();
-        System.out.println();
 
         switch (operator) {
             case '+':

@@ -1,37 +1,48 @@
-# JavaCodespace
+# Calculator
 
-## Problem
-
-Write a complete Java program that asks the user to enter a numerator and a denominator of a fraction from the keyboard. Output the fraction and resulting fraction as a decimal to the keyboard.
-
-Here is an example of how your program is to work:
-
-<pre>
-Enter Numerator: 4
-Enter Denominator: 2
-
-4/2 = 2
-</pre>
-
-Is the following solution correct? Why or why not?
+## Script
 
 <pre>
 import java.util.Scanner;
 
-public class Fraction {
-  public static void main (String[] args) {
-    Scanner scanner = new Scanner (System.in);
-    int numerator, denominator, result;
-    
-    System.out.print ("Enter Numerator: ");
-    numerator = scanner.nextInt ();
-    System.out.print ("Enter Denominator: ");
-    denominator = scanner.nextInt ();
-    System.out.println ();
-    
-    result = numerator / denominator;
-    
-    System.out.println (numerator + "/" + denominator + " = " + result);
-  }
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double number1, number2, result = 0;
+        char operator;
+
+        System.out.print("Enter Number: ");
+        number1 = scanner.nextDouble();
+        System.out.print("Enter Operator (+, -, *, /): ");
+        operator = scanner.next().charAt(0);
+        System.out.print("Enter Number: ");
+        number2 = scanner.nextDouble();
+        System.out.println();
+
+        switch (operator) {
+            case '+':
+                result = number1 + number2;
+                break;
+            case '-':
+                result = number1 - number2;
+                break;
+            case '*':
+                result = number1 * number2;
+                break;
+            case '/':
+                if (number2 != 0) {
+                    result = number1 / number2;
+                } else {
+                    System.out.println("Error: Division by zero is not allowed.");
+                    return;
+                }
+                break;
+            default:
+                System.out.println("Error: Invalid operator.");
+                return;
+        }
+
+        System.out.println(number1 + " " + operator + " " + number2 + " = " + result);
+    }
 }
 </pre>
