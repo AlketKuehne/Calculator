@@ -1,15 +1,21 @@
 # JavaCodespace
-# Problem
+
+## Problem
+
 Write a complete Java program that asks the user to enter a numerator and a denominator of a fraction from the keyboard. Output the fraction and resulting fraction as a decimal to the keyboard.
 
 Here is an example of how your program is to work:
 
+<pre>
 Enter Numerator: 4
 Enter Denominator: 2
 
 4/2 = 2
+</pre>
+
 Is the following solution correct? Why or why not?
 
+<pre>
 import java.util.Scanner;
 
 public class Fraction {
@@ -28,3 +34,4 @@ public class Fraction {
     System.out.println (numerator + "/" + denominator + " = " + result);
   }
 }
+</pre>
